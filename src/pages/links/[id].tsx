@@ -1,22 +1,23 @@
 import { useEffect } from 'react';
-import { folderListState, linkListState } from '@/recoil';
+import { useRecoilState } from 'recoil';
 import { useQuery } from '@tanstack/react-query';
 
-import { useRecoilState } from 'recoil';
+import type { FolderProps } from '@/types';
 
-import { getAllFolders } from '@/libs/folderService';
-
+import { folderListState, linkListState } from '@/recoil';
 import usePageRouter from '@/hooks/usePageRouter';
 
+import { getAllFolders } from '@/libs/folderService';
 import { fetchLinks } from '@/utils/linkFetcher';
 
 import DefaultLayout from '@/components/layout/DefaultLayout';
 
-import AddLinkArea from './components/AddLinkArea';
-import FolderSelectListArea from './components/FolderSelectListArea';
-import LinkLItemListArea from './components/LinkLItemListArea';
-import LinkSearchArea from './components/LinkSearchArea';
-import SelectedFolderTitleArea from './components/SelectedFolderTitleArea';
+import AddLink from './components/AddLink';
+import Dropdown from './components/Dropdown';
+import FolderSelectList from './components/FolderSelectList';
+import LinkLItemList from './components/LinkLItemList';
+import LinkSearch from './components/LinkSearch';
+import SelectedFolderTitle from './components/SelectedFolderTitle';
 
 import s from './style.module.scss';
 
@@ -25,7 +26,7 @@ export default function Page() {
   const [, setLinkList] = useRecoilState(linkListState);
   const currentSelectedFolderId = usePageRouter();
 
-  const { data: folderList } = useQuery({
+  const { data: folderList } = useQuery<FolderProps[]>({
     queryKey: ['folderList'],
     queryFn: getAllFolders,
   });
@@ -38,7 +39,12 @@ export default function Page() {
 
   useEffect(() => {
     if (folderList) {
-      setFolderList(folderList);
+      const newFolderList: FolderProps[] = [
+        { id: 'all', name: '전체', linkCount: folderList.length },
+        ...(folderList ?? []),
+        { id: 'favorite', name: '즐겨찾기' },
+      ];
+      setFolderList(newFolderList);
     }
     if (linkList) {
       setLinkList(linkList);
@@ -47,11 +53,11 @@ export default function Page() {
 
   return (
     <DefaultLayout>
-      <AddLinkArea />
-      <LinkSearchArea />
-      <FolderSelectListArea />
-      <SelectedFolderTitleArea />
-      <LinkLItemListArea />
+      <AddLink />
+      <LinkSearch />
+      <FolderSelectList />
+      <SelectedFolderTitle />
+      <LinkLItemList />
     </DefaultLayout>
   );
 }

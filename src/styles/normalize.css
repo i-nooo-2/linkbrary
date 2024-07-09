@@ -165,6 +165,7 @@ button,
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 button::-moz-focus-inner,
@@ -216,6 +217,7 @@ textarea {
 
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
+  appearance: textfield; /* 호환성을 위해 표준 속성 'appearance'도 정의 */
   outline-offset: -2px; /* 2 */
 }
 
@@ -244,6 +246,7 @@ template {
   display: none;
 }
 
+ul,
 li {
   list-style: none;
 }

@@ -9,9 +9,9 @@ $MAIN_PADDING_Y: 32px;
   align-items: center;
   width: 100%;
   height: 100vh;
-  text-align: center;
-  background-color: $gray-100;
   overflow: hidden;
+  background-color: $gray-100;
+  text-align: center;
 
   @media (max-width: $PC_WIDTH) {
     height: 950px;
@@ -26,18 +26,18 @@ $MAIN_PADDING_Y: 32px;
   .mainText {
     flex-grow: 0;
     width: 100%;
-    word-break: keep-all;
-    font-size: 64px;
     margin: 70px 0 40px 0;
+    font-size: 64px;
+    word-break: keep-all;
 
     @media (max-width: $TABLET_WIDTH) {
       max-width: 520px;
       margin: 40px 0;
     }
     @media (max-width: $MOBILE_WIDTH) {
-      font-size: 32px;
       max-width: 270px;
       margin: 28px 0 24px 0;
+      font-size: 32px;
     }
   }
 
@@ -53,22 +53,22 @@ $MAIN_PADDING_Y: 32px;
   }
 
   .imageWrap {
-    flex-grow: 3; /* 더 많은 공간을 차지하도록 설정 */
     display: flex;
-    justify-content: center;
     position: relative;
+    flex-grow: 3; /* 더 많은 공간을 차지하도록 설정 */
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
 
     .titleImage {
       width: 100%;
+      height: 100%;
+      margin-top: 70px;
+      border-radius: 15px;
       background: url('https://github.com/codeit-sprint-6th-part3-team1/linkbrary/assets/128791227/d230acb1-280a-4045-843f-a9e7848ce90f') no-repeat center
         center;
       background-size: contain;
-      height: 100%;
-      border-radius: 15px;
-      margin-top: 70px;
 
       @media (max-width: $TABLET_WIDTH) {
         margin-top: 30px;
@@ -132,15 +132,15 @@ $MAIN_PADDING_Y: 32px;
 }
 
 .section {
-  height: 450px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 450px;
   margin: 80px auto;
 
   @media (max-width: $TABLET_WIDTH) {
-    height: auto;
     flex-direction: column;
+    height: auto;
   }
   @media (max-width: $MOBILE_WIDTH) {
     height: auto;
@@ -164,18 +164,18 @@ $MAIN_PADDING_Y: 32px;
 }
 
 .text {
-  word-break: keep-all;
-  flex: 4;
-  padding: 20px;
   display: flex;
+  flex: 4;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   margin-left: 40px;
+  padding: 20px;
+  word-break: keep-all;
 
   h2 {
-    font-size: 50px;
     margin-bottom: 10px;
+    font-size: 50px;
     @media (max-width: $PC_WIDTH) {
       font-size: 40px;
     }
@@ -188,8 +188,8 @@ $MAIN_PADDING_Y: 32px;
     }
   }
   p {
-    font-size: 16px;
     color: #6b6b6b;
+    font-size: 16px;
     @media (max-width: $PC_WIDTH) {
       font-size: 14px;
     }
@@ -202,18 +202,18 @@ $MAIN_PADDING_Y: 32px;
     }
   }
   @media (max-width: $TABLET_WIDTH) {
-    margin-left: 0;
     align-items: center;
+    margin-left: 0;
     text-align: center;
   }
 }
 
 .image {
-  flex: 6;
-  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex: 6;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
   img {
     max-width: 100%;
     height: auto;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './Button.module.scss';
 
 type ButtonStyleProps = {
@@ -51,7 +52,7 @@ interface ButtonProps extends ButtonStyleProps {
 
 const Button: React.FC<ButtonProps> = ({ variant, colorType, onClick, text, width, children }) => {
   return (
-    <button className={`${styles.btn} ${styles[variant]} ${styles[colorType]}`} style={{ width: width }} onClick={onClick}>
+    <button className={`${styles.btn} ${styles[variant]} ${styles[colorType]}`} style={{ width }} onClick={onClick}>
       {children || text}
     </button>
   );

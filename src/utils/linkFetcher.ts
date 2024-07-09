@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import type { LinkProps, PagingOptions } from '@/types';
+import { defaultPagingOptions } from '@/constants';
 
 import { getAllLinks, getFavorites, getLinksByFolder } from '@/libs/linkService';
-
-import { defaultPagingOptions } from '@/constants';
 
 type GetAllLinks = (_options?: PagingOptions) => Promise<LinkProps[]>;
 type GetFavorite = (_options?: PagingOptions) => Promise<LinkProps[]>;

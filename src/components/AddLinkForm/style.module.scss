@@ -1,21 +1,21 @@
 .container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  top: 16px;
+  display: flex;
+  flex-direction: column;
   left: 16px;
+  top: 16px;
 }
 
 .inputContainer {
-  display: flex;
   align-items: center;
   border: 1px solid #6d6afe;
   border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
   padding: 16px 20px;
   width: 100%;
-  max-width: 800px;
-  justify-content: space-between;
 }
 
 .logo {
@@ -23,24 +23,23 @@
 }
 
 .input {
-  flex: 1;
-  padding: 10px;
   border: none;
-  outline: none;
+  flex: 1;
   font-size: 16px;
+  outline: none;
+  padding: 10px;
 }
 
 .button {
-  padding: 10px 20px;
-  line-height: 16.71px;
   background: linear-gradient(to right, #6d6afe, #6ae3fe);
-  color: white;
   border: none;
   border-radius: 8px;
-  padding: 10px 16px;
-  gap: 10px;
+  color: white;
   cursor: pointer;
   font-size: 14px;
+  gap: 10px;
+  line-height: 16.71px;
+  padding: 10px 16px;
   transition: background-color 0.3s;
 
   &:hover {
@@ -55,10 +54,10 @@
 
 .linkList {
   list-style: none;
-  padding: 0;
   margin-top: 20px;
-  width: 100%;
   max-width: 500px;
+  padding: 0;
+  width: 100%;
 }
 
 .linkItem {
@@ -84,9 +83,9 @@
   }
 
   .icon {
-    width: 16px;
     height: 16px;
     margin-right: 8px;
+    width: 16px;
   }
 
   .input {

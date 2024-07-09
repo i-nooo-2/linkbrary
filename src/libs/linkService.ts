@@ -1,5 +1,4 @@
 import type { LinkProps, PagingOptions } from '@/types';
-
 import { defaultPagingOptions, ENDPOINTS } from '@/constants';
 
 import { addQueryParams, replacePlaceholder } from '@/utils/urlHelper';

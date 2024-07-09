@@ -1,20 +1,20 @@
 @import '@/styles';
 
 .container {
-  width: 100vw;
-  height: 100vh;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   background-color: $gray-100;
 }
 
 .signUpContainer {
-  width: 400px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 400px;
 
   @media screen and (max-width: $MOBILE_WIDTH) {
     width: 325px;
@@ -22,30 +22,30 @@
 }
 
 .formHeaderContainer {
-  width: 100%;
-  height: 78px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 78px;
 }
 
 .formHeaderWrap {
-  width: auto;
-  height: 100%;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: 100%;
 
   gap: 16px;
 }
 
 .formTitleContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .formTitle {
@@ -60,34 +60,34 @@
 }
 
 .titleLink {
-  text-decoration: none;
   border-bottom: 1px solid #6d6afe;
+  text-decoration: none;
   @include fontSetting(#6d6afe, 600, 16px, 19.09px);
 }
 
 .signupForm {
-  width: 100%;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 100%;
 }
 
 .inputContainer {
-  width: 100%;
 
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 
 .inputWrap {
-  width: 100%;
   // height: auto;
 
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 
 .inputLabel {
@@ -116,9 +116,9 @@
   border: none;
   border-radius: 8px;
   background: linear-gradient(90.99deg, #6d6afe 0.12%, #6ae3fe 101.84%);
-  @include fontSetting(#f5f5f5, 600, 18px, 21.48px);
 
   cursor: pointer;
+  @include fontSetting(#f5f5f5, 600, 18px, 21.48px);
 }
 
 @media screen and (max-width: 1199px) {
