@@ -24,20 +24,14 @@ module.exports = {
         groups: [
           // Side effect imports
           ['^\\u0000'],
-          // Packages. 'react' related packages come first.
-          ['^react', '^\\w', '^@'],
-          // Recoil imports
-          ['^recoil'],
-          // Types
-          ['^@/types'],
-          // Libs
-          ['^@/libs'],
-          // Hooks
-          ['^@/hooks'],
-          // Constants
-          ['^@/constants'],
-          // Utils
-          ['^@/utils'],
+          // Packages. 'react' related packages come first. // recoil
+          ['^react', '^\\w', '^recoil', '^@'],
+          // Types // Constants
+          ['^@/types', '^@/constants'],
+          // Recoil imports // Hooks
+          ['@/recoil', '^@/hooks'],
+          // Libs // Utils
+          ['^@/libs', '^@/utils'],
           // Components from '@/components'
           ['^@/components'],
           // Relative imports. Put same-folder imports first and parent imports last.

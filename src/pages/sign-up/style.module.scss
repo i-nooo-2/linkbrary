@@ -1,0 +1,142 @@
+@import '@/styles';
+
+.container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $gray-100;
+}
+
+.signUpContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 400px;
+
+  @media screen and (max-width: $MOBILE_WIDTH) {
+    width: 325px;
+  }
+}
+
+.formHeaderContainer {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 78px;
+}
+
+.formHeaderWrap {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: 100%;
+
+  gap: 16px;
+}
+
+.formTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formTitle {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  @include fontSetting(#000000, 400, 16px, 24px);
+}
+
+.titleLinkWrap {
+  padding: 0 0 4px 8px;
+}
+
+.titleLink {
+  border-bottom: 1px solid #6d6afe;
+  text-decoration: none;
+  @include fontSetting(#6d6afe, 600, 16px, 19.09px);
+}
+
+.signupForm {
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.inputContainer {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.inputWrap {
+  // height: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.inputLabel {
+  @include fontSetting(#000000, 400, 14px, 16.71px);
+}
+
+// .inputBackground {
+//   width: calc(100% - (15 * 2px));
+//   height: calc(60px - (18 * 2px));
+//   padding: 18px 15px;
+
+//   border: 1px solid #ccd5e3;
+//   background-color: $white;
+//   border-radius: 8px;
+//   input {
+//     width: 100%;
+//     height: 24px;
+//     border: none;
+//     outline: none;
+//   }
+// }
+
+.formButton {
+  width: 100%;
+  height: 53px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90.99deg, #6d6afe 0.12%, #6ae3fe 101.84%);
+
+  cursor: pointer;
+  @include fontSetting(#f5f5f5, 600, 18px, 21.48px);
+}
+
+@media screen and (max-width: 1199px) {
+  // .signupContainer {
+  //   height: 506px;
+  // }
+
+  // .inputContainer {
+  //   height: 315px;
+  // }
+}
+
+@media screen and (max-width: 390px) {
+  // .signupContainer {
+  //   width: 325px;
+  // }
+
+  // .inputContainer {
+  //   height: 315px;
+  // }
+}

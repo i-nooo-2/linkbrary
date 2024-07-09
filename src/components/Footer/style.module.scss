@@ -11,30 +11,30 @@ $snsWrapperMaxWidth: 116px;
 
 .footer {
   display: flex;
-  background-color: $black;
-  padding: $footerPadding 104px;
-  height: calc($footerHeight - ($footerPadding * 2));
   align-items: flex-start;
+  height: $footerHeight;
+  padding: 32px 104px;
+  background-color: $black;
   white-space: nowrap;
 
   @media screen and (max-width: $footerTabletWidth) {
-    padding: $footerPadding;
+    padding: 32px;
   }
 }
 
 .container {
   display: flex;
-  width: 100%;
   grid-template-columns: 1fr auto auto;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   @media screen and (max-width: $footerTabletWidth) {
     display: grid;
-    height: 100%;
     grid-template-columns: auto auto;
-    align-items: stretch;
     align-content: space-between;
+    align-items: stretch;
+    height: 100%;
   }
 }
 
@@ -42,32 +42,32 @@ $copyRightColor: #676767;
 $contractColor: #cfcfcf;
 
 .copyright {
-  @include font-base($copyRightColor, $fontWeight, $fontSize, $lineHeight);
+  @include fontSetting($copyRightColor, $fontWeight, $fontSize, $lineHeight);
 }
 
 .contractList {
   display: flex;
-  width: fit-content;
   gap: 30px;
   justify-content: center;
+  width: fit-content;
 
   @media screen and (max-width: $footerTabletWidth) {
-    justify-content: flex-start;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    justify-content: flex-start;
   }
 
   .contract {
     text-decoration: none;
-    @include font-base($contractColor, $fontWeight, $fontSize, $lineHeight);
+    @include fontSetting($contractColor, $fontWeight, $fontSize, $lineHeight);
   }
 }
 
 .snsList {
-  width: 116px;
   display: flex;
-  justify-content: space-between;
   grid-column: 3 / 4;
+  justify-content: space-between;
+  width: 116px;
 
   @media screen and (max-width: $footerTabletWidth) {
     grid-column: 2 / 3;

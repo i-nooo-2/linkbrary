@@ -1,0 +1,39 @@
+@import '@/styles';
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.btn {
+  cursor: pointer;
+}
+.list {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  width: auto;
+  min-width: 128px;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid #6d6afe;
+  border-radius: 8px;
+  background-color: white;
+  list-style: none;
+  @include fontSetting(null, 400, 14px, 19.2px);
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 7px 25px;
+  padding: 0 4px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 4px;
+    background-color: #e7effb;
+  }
+}

@@ -1,0 +1,95 @@
+.container {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  left: 16px;
+  top: 16px;
+}
+
+.inputContainer {
+  align-items: center;
+  border: 1px solid #6d6afe;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  padding: 16px 20px;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.input {
+  border: none;
+  flex: 1;
+  font-size: 16px;
+  outline: none;
+  padding: 10px;
+}
+
+.button {
+  background: linear-gradient(to right, #6d6afe, #6ae3fe);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  gap: 10px;
+  line-height: 16.71px;
+  padding: 10px 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: linear-gradient(to right, #5a0db8, #f373b7);
+  }
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.linkList {
+  list-style: none;
+  margin-top: 20px;
+  max-width: 500px;
+  padding: 0;
+  width: 100%;
+}
+
+.linkItem {
+  margin-bottom: 10px;
+}
+
+.link {
+  color: #0070f3;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .inputContainer {
+    padding: 8px 12px;
+  }
+
+  .icon {
+    height: 16px;
+    margin-right: 8px;
+    width: 16px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

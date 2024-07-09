@@ -12,12 +12,10 @@ export const replacePlaceholder = (url: string, placeholder: { [key: string]: st
 
 // url에 query parameter 추가
 export const addQueryParams = (url: string, queryParams: { [key: string]: string | number | undefined }) => {
-  const urlObj = new URL(url, process.env.NEXT_PUBLIC_API_ROOT_URL);
-  Object.keys(queryParams).forEach((key) => {
-    const value = queryParams[key];
-    if (value !== undefined) {
-      urlObj.searchParams.append(key, value.toString());
-    }
-  });
-  return urlObj.toString();
+  const queryString = Object.keys(queryParams)
+    .filter((key) => queryParams[key] !== undefined)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key] as string | number)}`)
+    .join('&');
+
+  return queryString ? `${url}?${queryString}` : url;
 };
