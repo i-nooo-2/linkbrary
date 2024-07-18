@@ -11,7 +11,14 @@ module.exports = {
         sourceType: 'module',
       },
       plugins: ['@typescript-eslint'],
-      extends: ['plugin:@typescript-eslint/recommended', 'plugin:@typescript-eslint/recommended-requiring-type-checking', 'plugin:import/typescript'],
+      extends: [
+        // TypeScript ESLint 권장 설정 적용
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        // interface member 순서를 정렬하는 규칙을 적용합니다.
+        // '@typescript-eslint/member-ordering'는 auto fix가 안되는 이슈가 있기 때문에, 대신 typescript-sort-keys를 사용합니다.
+        'plugin:typescript-sort-keys/recommended',
+      ],
       rules: {
         // function definition은 hoisting되기 때문에 define 되기 전에 사용해도 됩니다.
         // React component 등에서, 메인(default export) 컴포넌트를 위에 정의하고 private 컴포넌트를 밑에 정의하는 패턴에서 유용합니다.
@@ -65,7 +72,7 @@ module.exports = {
           },
         ],
 
-        // 인터페이스, 타입 이름은 무조건 대문자로 시작
+        // 인터페이스, 타입 이름은 무조건 PascalCase로 작성되도록 합니다.
         '@typescript-eslint/naming-convention': [
           'error',
           {
@@ -81,6 +88,21 @@ module.exports = {
             format: ['PascalCase'],
           },
         ],
+
+        // // any 타입의 사용을 허용함으로써 유연성을 유지합니다.
+        // '@typescript-eslint/no-unsafe-return': 'off',
+
+        // // any 타입의 인자를 허용함으로써 더 유연한 함수 정의를 가능하게 합니다.
+        // '@typescript-eslint/no-unsafe-argument': 'off',
+
+        // // 명시적으로 any 타입을 사용할 수 있도록 허용합니다.
+        // '@typescript-eslint/no-explicit-any': 'off',
+
+        // // any 타입의 멤버에 접근하는 것을 허용합니다.
+        // '@typescript-eslint/no-unsafe-member-access': 'off',
+
+        // 사용하지 않는 변수를 경고로 표시합니다.
+        '@typescript-eslint/no-unused-vars': 'warn',
       },
     },
   ],

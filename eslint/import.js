@@ -9,7 +9,8 @@ module.exports = {
     },
   },
   rules: {
-    // import하는 패키지명을 그대로 camelCase화해서 쓰도록 강제해서 일관성을 높입니다. 단, react와 clsx는 자동 룰 대신 아래 룰을 따르게 합니다.
+    // 패키지명을 camelCase화해서 사용하도록 강제하여 코드의 일관성을 유지합니다.
+    // 예외적으로 react와 clsx는 별도의 명명 규칙을 따릅니다.
     'import-name/all-imports-name': [
       'error',
       {
@@ -17,48 +18,50 @@ module.exports = {
       },
     ],
 
-    // 유사한 항목을 그룹으로 묶어서 정렬합니다.
+    // 유사한 항목을 그룹으로 묶어서 import를 정렬합니다.
     'simple-import-sort/imports': [
       'error',
       {
         groups: [
-          // Side effect imports
+          // Side effect imports: side effect가 있는 import를 가장 먼저 위치시킵니다.
           ['^\\u0000'],
-          // Packages. 'react' related packages come first. // recoil
+          // 패키지들: 'react' 관련 패키지가 먼저 오고, 그 다음 기타 패키지들 및 recoil, @로 시작하는 패키지들.
           ['^react', '^\\w', '^recoil', '^@'],
-          // Types // Constants
+          // Types 및 Constants: @/types와 @/constants로 시작하는 항목들.
           ['^@/types', '^@/constants'],
-          // Recoil imports // Hooks
+          // Recoil imports 및 Hooks: @/recoil과 @/hooks로 시작하는 항목들.
           ['@/recoil', '^@/hooks'],
-          // Libs // Utils
+          // Libs 및 Utils: @/libs와 @/utils로 시작하는 항목들.
           ['^@/libs', '^@/utils'],
-          // Components from '@/components'
+          // Components: @/components로 시작하는 항목들.
           ['^@/components'],
-          // Relative imports. Put same-folder imports first and parent imports last.
+          // Relative imports: 같은 폴더의 import가 먼저 오고, 상위 폴더의 import가 그 다음에 옵니다.
           ['^\\./', '^\\.\\./'],
-          // Public assets
+          // Public assets: ../../../public/ 디렉토리 내의 항목들.
           ['^../../../public/'],
-          // SVG icons
+          // SVG 아이콘: .svg 파일들.
           ['^.+\\.svg$'],
-          // json files
+          // JSON 파일들.
           ['^.+\\.json$'],
-          // Style imports.
+          // 스타일 파일들.
           ['^.+\\.scss$'],
         ],
       },
     ],
+
+    // export를 정렬하여 가독성을 높입니다.
     'simple-import-sort/exports': 'error',
 
-    // import 문은 문서 상단에 위치합니다.
+    // import 문을 문서의 상단에 위치시켜 코드 구조를 일관되게 유지합니다.
     'import/first': 'error',
 
-    // import 문 아래에 빈 줄을 삽입합니다.
+    // import 문 다음에 빈 줄을 삽입하여 코드의 가독성을 높입니다.
     'import/newline-after-import': 'error',
 
     // 중복된 import를 허용하지 않습니다.
     'import/no-duplicates': 'error',
 
-    // import할 때 js/jsx/ts/tsx 파일은 extension을 붙이지 않고, json에는 항상 붙이게 합니다.
+    // import할 때 js/jsx/ts/tsx 파일에는 확장자를 붙이지 않고, json 파일에는 항상 확장자를 붙이도록 합니다.
     'import/extensions': [
       'error',
       {
@@ -73,10 +76,11 @@ module.exports = {
       },
     ],
 
-    // import 플러그인으로도 ordering을 강제할 수 있지만, order group 지정이 더 간편한 simple-import-sort 플러그인을 대신 사용합니다.
+    // import 플러그인으로도 정렬을 강제할 수 있지만, order group 지정을 더 간편하게 할 수 있는 simple-import-sort 플러그인을 대신 사용합니다.
     'import/order': 'off',
 
-    // 한 파일에 하나의 export만 있더라도 여러 개로 늘어날 가능성을 고려하여 default export를 하지 않는 경우가 훨씬 많습니다.
+    // 한 파일에 여러 개의 export가 늘어날 가능성을 고려하여 default export를 사용하지 않습니다.
+    // 이는 명명된 export를 사용하여 모듈의 재사용성을 높이고, 코드의 가독성을 향상시킵니다.
     'import/prefer-default-export': 'off',
   },
 };
