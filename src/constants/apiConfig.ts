@@ -32,11 +32,11 @@ export const ENDPOINTS = {
 export type ENDPOINT = keyof typeof ENDPOINTS;
 
 export enum HttpMethod {
+  DELETE = 'DELETE',
   GET = 'GET',
+  PATCH = 'PATCH',
   POST = 'POST',
   PUT = 'PUT',
-  DELETE = 'DELETE',
-  PATCH = 'PATCH',
 }
 
 export const defaultPagingOptions: PagingOptions = { page: 1, pageSize: 10 };

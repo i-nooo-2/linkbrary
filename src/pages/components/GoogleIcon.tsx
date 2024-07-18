@@ -1,5 +1,6 @@
+import type { SVGProps } from 'react';
 import * as React from 'react';
-import { SVGProps } from 'react';
+
 const GoogleIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={44} height={44} fill="none" {...props}>
     <circle cx={22} cy={22} r={21} fill="#fff" stroke="#D3D4DD" />

@@ -1,5 +1,4 @@
 import type { UserProps } from '@/types';
-
 import { ENDPOINTS } from '@/constants';
 
 import axiosInstance from './axiosInstance';

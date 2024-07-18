@@ -1,7 +1,7 @@
 export enum CustomInputTypes {
-  TEXT = 'text',
   EMAIL = 'email',
   PASSWORD = 'password',
+  TEXT = 'text',
 }
 
 export type CustomInputType = keyof typeof CustomInputTypes;

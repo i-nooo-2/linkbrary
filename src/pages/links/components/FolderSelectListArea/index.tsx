@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { currentFolderState, folderListState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
 
 import type { currentFolder, FolderProps } from '@/types';
+
+import { currentFolderState, folderListState } from '@/recoil';
 
 const FolderItem = ({ id, name }: currentFolder) => {
   const [, setCurrentFolder] = useRecoilState(currentFolderState);

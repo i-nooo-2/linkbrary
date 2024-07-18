@@ -7,14 +7,14 @@ import pwOffIcon from '../../../public/assets/input/eye-on.svg';
 import styles from './style.module.scss';
 
 interface InputBoxProps {
-  type: string;
-  value: string;
   err: boolean;
   errMsg: string;
   onValueChange: (value: string) => void;
+  type: string;
+  value: string;
 }
 
-const InputBox = ({ type, value, err, errMsg, onValueChange }: InputBoxProps) => {
+function InputBox({ type, value, err, errMsg, onValueChange }: InputBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handlePasswordToggle = () => {
@@ -27,7 +27,7 @@ const InputBox = ({ type, value, err, errMsg, onValueChange }: InputBoxProps) =>
         <input
           type={type === 'password' && showPassword ? 'text' : type}
           value={value}
-          onChange={(e) => onValueChange(e.target.value)}
+          onChange={e => onValueChange(e.target.value)}
           aria-invalid={err}
           aria-describedby={err ? `${type}-error` : undefined}
         />
@@ -40,6 +40,6 @@ const InputBox = ({ type, value, err, errMsg, onValueChange }: InputBoxProps) =>
       {err && value.length > 0 && <span className={styles.errMsg}>{errMsg}</span>}
     </div>
   );
-};
+}
 
 export default InputBox;

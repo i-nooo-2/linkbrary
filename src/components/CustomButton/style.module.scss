@@ -1,0 +1,99 @@
+@import '@/styles';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:disabled {
+    color: #a8a8a8 !important;
+    pointer-events: none;
+  }
+
+  &[data-variant='contained'] {
+    background: #6d6afe;
+    border-radius: 20px;
+    color: white;
+    padding: 8px 24px;
+    @include fontSetting($color: white, $weight: 500, $size: 16px, $line-height: 19.09px);
+    gap: 4px;
+    min-height: 35px;
+
+    &:hover:not(:disabled) {
+      background: #5c5af7;
+    }
+
+    &:active:not(:disabled) {
+      background: #4b4ae1;
+    }
+  }
+
+  &[data-variant='gradient'] {
+    background: linear-gradient(90.99deg, #6d6afe 0.12%, #6ae3fe 101.84%);
+    border-radius: 8px;
+    min-height: 37px;
+    min-width: 80px;
+    max-width: 350px;
+    width: 100% !important;
+    @include fontSetting($color: white, $weight: 600, $size: null, $line-height: null);
+
+    &:disabled {
+      background: none !important;
+      background-color: #e0e0e0 !important;
+    }
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(90.99deg, #5c5af7 0.12%, #5ad6f7 101.84%);
+    }
+
+    &:active:not(:disabled) {
+      background: linear-gradient(90.99deg, #4b4ae1 0.12%, #4ab8e1 101.84%);
+    }
+  }
+
+  &[data-variant='outlined'] {
+    width: fit-content;
+    min-width: 20px;
+    height: fit-content;
+
+    background-color: white;
+    border: 1px solid #6d6afe;
+    border-radius: 5px;
+
+    padding: 8px 12px;
+
+    @include fontSetting($weight: 400, $size: 16px, $line-height: 19.2px);
+
+    &:disabled {
+      background-color: white;
+      color: #a8a8a8;
+      border-color: #a8a8a8;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #e8ecfc;
+    }
+
+    &:active:not(:disabled) {
+      background-color: #6d6afe;
+      color: white;
+    }
+
+    &.selected {
+      background-color: #6d6afe;
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .button {
+    &[data-variant='outlined'] {
+      padding: 6px 10px;
+      @include fontSetting($weight: 400, $size: 14px, $line-height: 16.71px);
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import s from '@/pages/faq/style.module.scss';
 import MainLogo from '@/../public/assets/gnb/MainLogo';
+
 import Footer from '@/components/Footer';
+
+import s from '@/pages/faq/style.module.scss';
 
 interface FAQItemProps {
   question: string;

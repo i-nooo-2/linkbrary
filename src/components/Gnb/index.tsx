@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+import { DeviceType } from '@/constants/deviceSizes';
+
 import useLogin from '@/hooks/useLogin';
 import useWindowSize from '@/hooks/useWindowSize';
 
-import { DeviceType } from '@/constants/deviceSizes';
-
-import Button from '@/components/Button/Button';
-
+// import Button from '@/components/Button/Button';
 import MainLogo from '../../../public/assets/gnb/MainLogo';
 import ProfileIcon from '../../../public/assets/gnb/ProfileIcon';
 
@@ -21,11 +20,7 @@ interface GnbProps {
 function UserProfile({ isLogin, userEmail }: { isLogin: boolean; userEmail: string }) {
   const { logout } = useLogin();
   if (!isLogin) {
-    return (
-      <Link href="/login">
-        <Button variant="login" colorType="gradient" text="로그인" />
-      </Link>
-    );
+    return <Link href="/login">{/* <Button variant="login" colorType="gradient" text="로그인" /> */}</Link>;
   }
   return (
     <div className={s.userSection}>

@@ -20,11 +20,6 @@
   background-clip: padding-box;
 }
 
-/* Firefox용 커스텀 스크롤바 */
-body {
-  scrollbar-width: thin; /* 스크롤바 너비 */
-  scrollbar-color: #888 transparent; /* 스크롤바 색상 */
-}
 ::-webkit-scrollbar-button {
   display: none;
 }
@@ -70,6 +65,8 @@ html {
 
 body {
   margin: 0;
+  scrollbar-width: thin; /* 스크롤바 너비 */
+  scrollbar-color: #888 transparent; /* 스크롤바 색상 */
 }
 
 main {
@@ -160,12 +157,23 @@ select {
   text-transform: none;
 }
 
+input {
+  cursor: text;
+  &:disabled {
+    cursor: default;
+  }
+}
+
 button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: button;
   appearance: button;
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
 }
 
 button::-moz-focus-inner,

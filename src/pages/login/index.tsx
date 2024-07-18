@@ -3,17 +3,15 @@ import type { AxiosError } from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
-import { loginState } from '@/recoil';
+import { useRecoilState } from 'recoil';
 import { useMutation } from '@tanstack/react-query';
 
-import { useRecoilState } from 'recoil';
-
 import type { AuthProps } from '@/types';
-
-import { login } from '@/libs/authService';
-
 import { InputTypes } from '@/constants/inputTypes';
 
+import { loginState } from '@/recoil';
+
+import { login } from '@/libs/authService';
 import { setCookie } from '@/utils/cookie';
 
 import InputBox from '@/components/InputBox';
@@ -59,7 +57,7 @@ export default function Login() {
   }, [values, validateEmail]);
 
   const handleChange = (name: string, value: string) => {
-    setValues((prevValues) => ({
+    setValues(prevValues => ({
       ...prevValues,
       [name]: value,
     }));
@@ -73,23 +71,22 @@ export default function Login() {
         setEmailError(!isValid);
         setEmailErrorMessage(isValid ? '' : '이메일 형식으로 작성해 주세요.');
       }
-      // TODO : 살려야 함
-      // } else if (name === 'password') {
-      //   if (value === '') {
-      //     setPasswordError(false);
-      //     setPasswordErrorMessage('');
-      //   } else {
-      //     const isValid = validatePassword(value);
-      //     setPasswordError(!isValid);
-      //     setPasswordErrorMessage(isValid ? '' : '8자 이상 입력해주세요.');
-      //   }
+    } else if (name === 'password') {
+      if (value === '') {
+        setPasswordError(false);
+        setPasswordErrorMessage('');
+      } else {
+        const isValid = validatePassword(value);
+        setPasswordError(!isValid);
+        setPasswordErrorMessage(isValid ? '' : '8자 이상 입력해주세요.');
+      }
     }
   };
 
   const signInSubmit = useMutation({
     mutationFn: ({ email, password }: AuthProps) => login({ email, password }),
-    onSuccess: (response) => {
-      const accessToken = response?.accessToken;
+    onSuccess: response => {
+      const accessToken = (response as { accessToken?: string })?.accessToken;
       if (accessToken) {
         setCookie('accessToken', accessToken, {
           path: '/',
@@ -141,7 +138,7 @@ export default function Login() {
         </Link>
         <div className={styles.formTitleContainer}>
           <p>회원이 아니신가요?</p>
-          <Link href="/signup">회원 가입하기</Link>
+          <Link href="/sign-up">회원 가입하기</Link>
         </div>
       </div>
 
@@ -153,7 +150,7 @@ export default function Login() {
             value={values.email}
             err={emailError}
             errMsg={emailErrorMessage}
-            onValueChange={(value) => handleChange('email', value)}
+            onValueChange={value => handleChange('email', value)}
           />
           <label htmlFor="password">비밀번호</label>
           <InputBox
@@ -161,7 +158,7 @@ export default function Login() {
             value={values.password}
             err={passwordError}
             errMsg={passwordErrorMessage}
-            onValueChange={(value) => handleChange('password', value)}
+            onValueChange={value => handleChange('password', value)}
           />
           <button type="submit" className={styles.formButton} disabled={!isFormValid} data-err={emailError || passwordError ? 'true' : 'false'}>
             로그인

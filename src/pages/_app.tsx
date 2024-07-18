@@ -1,10 +1,9 @@
 import '@/styles/normalize.css';
 
 import type { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 import AuthContext from '@/context/AuthContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-import { RecoilRoot } from 'recoil';
 
 import Layout from '@/components/layout/Layout';
 

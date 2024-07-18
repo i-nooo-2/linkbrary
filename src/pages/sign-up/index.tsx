@@ -3,9 +3,9 @@ import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import axiosInstance from '@/libs/axios';
-
 import { InputTypes } from '@/constants/inputTypes';
+
+import axiosInstance from '@/libs/axios';
 
 import InputBox from '@/components/InputBox';
 
@@ -148,7 +148,7 @@ export default function Page() {
                 value={values.email}
                 err={emailError}
                 errMsg={emailErrorMessage}
-                onValueChange={(value) => handleChange('email', value)}
+                onValueChange={value => handleChange('email', value)}
               />
             </div>
             <div className={styles.inputWrap}>
@@ -160,7 +160,7 @@ export default function Page() {
                 value={values.password}
                 err={passwordError}
                 errMsg={passwordErrorMessage}
-                onValueChange={(value) => handleChange('password', value)}
+                onValueChange={value => handleChange('password', value)}
               />
             </div>
             <div className={styles.inputWrap}>
@@ -172,7 +172,7 @@ export default function Page() {
                 value={values.passwordRepeat}
                 err={passwordRepeatError}
                 errMsg={passwordRepeatErrorMessage}
-                onValueChange={(value) => handleChange('passwordRepeat', value)}
+                onValueChange={value => handleChange('passwordRepeat', value)}
               />
             </div>
           </div>

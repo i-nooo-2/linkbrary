@@ -13,7 +13,7 @@ import { fetchLinks } from '@/utils/linkFetcher';
 import DefaultLayout from '@/components/layout/DefaultLayout';
 
 import AddLink from './components/AddLink';
-import Dropdown from './components/Dropdown';
+import DropdownAddBtn from './components/DropdownAddBtn';
 import FolderSelectList from './components/FolderSelectList';
 import LinkLItemList from './components/LinkLItemList';
 import LinkSearch from './components/LinkSearch';
@@ -58,6 +58,7 @@ export default function Page() {
       <FolderSelectList />
       <SelectedFolderTitle />
       <LinkLItemList />
+      <DropdownAddBtn />
     </DefaultLayout>
   );
 }

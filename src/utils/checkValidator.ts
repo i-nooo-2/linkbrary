@@ -1,5 +1,4 @@
 import type { validatorProps } from '@/types';
-
 import { regex } from '@/constants/regex';
 
 export const checkValidator = (formData: Partial<validatorProps>): Partial<validatorProps> => {

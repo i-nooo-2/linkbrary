@@ -1,5 +1,6 @@
+import type { SVGProps } from 'react';
 import * as React from 'react';
-import { SVGProps } from 'react';
+
 const KakaoIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={42} height={42} fill="none" {...props}>
     <circle cx={21} cy={21} r={21} fill="#F5E14B" />

@@ -1,5 +1,6 @@
+import type { SVGProps } from 'react';
 import * as React from 'react';
-import { SVGProps } from 'react';
+
 const LogoIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={212} height={38} fill="none" {...props}>
     <path

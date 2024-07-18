@@ -1,15 +1,15 @@
 import { type ReactNode, useEffect } from 'react';
 import router from 'next/router';
-import { loginState, userState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
+
+import { loginState, userState } from '@/recoil';
 
 import Footer from '@/components/Footer';
 import Gnb from '@/components/Gnb';
 
 import s from './style.module.scss';
 
-const DefaultLayout = ({ children }: { children: ReactNode }) => {
+function DefaultLayout({ children }: { children: ReactNode }) {
   const [isLoggedIn] = useRecoilState(loginState);
   const user = useRecoilState(userState);
 
@@ -26,5 +26,5 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
       <Footer />
     </>
   );
-};
+}
 export default DefaultLayout;

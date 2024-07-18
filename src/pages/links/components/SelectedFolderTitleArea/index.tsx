@@ -1,6 +1,6 @@
-import { currentFolderState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
+
+import { currentFolderState } from '@/recoil';
 
 const SelectedFolderTitleArea = () => {
   const [currentFolder] = useRecoilState(currentFolderState);

@@ -1,7 +1,6 @@
 import { atom } from 'recoil';
 
 import type { currentFolder, FolderProps, LinkProps, UserProps } from '@/types';
-
 import { userDefault } from '@/constants/defaultValue';
 
 import { getCookie } from '@/utils';

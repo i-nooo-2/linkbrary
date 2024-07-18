@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { loginState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
 
-import Button from '@/components/Button/Button';
+import { loginState } from '@/recoil';
+
+// import Button from '@/components/Button/Button';
 import DefaultLayout from '@/components/layout/DefaultLayout';
 
 import s from '@/pages/landing/style.module.scss';
@@ -24,13 +24,13 @@ export default function Landing() {
           <span className={s.gradientMain}>세상의 모든 정보</span>를<br /> 쉽게 저장하고 관리해 보세요
         </h1>
         <div className={s.addBtn}>
-          {mounted && isLoggedIn ? (
+          {/* {mounted && isLoggedIn ? (
             <Link href="/links/all">
               <Button variant="add-link" colorType="gradient" text="링크 추가하기" />
             </Link>
           ) : (
             <Button variant="add-link" colorType="gradient" text="링크 추가하기" />
-          )}
+          )} */}
         </div>
         <div className={s.imageWrap}>
           <div className={s.titleImage} />

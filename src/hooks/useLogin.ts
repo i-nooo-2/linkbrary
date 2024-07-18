@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { loginState, userState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
 
 import type { AuthProps } from '@/types';
+import { userDefault } from '@/constants/defaultValue';
+
+import { loginState, userState } from '@/recoil';
 
 import { login as loginApi } from '@/libs/authService';
 import { getAllUsers } from '@/libs/userService';
-
-import { userDefault } from '@/constants/defaultValue';
-
 import { removeCookie, setCookie } from '@/utils/cookie';
 
 const useLogin = () => {

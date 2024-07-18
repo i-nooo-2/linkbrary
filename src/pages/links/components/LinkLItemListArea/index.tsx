@@ -1,8 +1,8 @@
-import { fetchMsgState, linkListState } from '@/recoil';
-
 import { useRecoilState } from 'recoil';
 
 import type { LinkProps } from '@/types';
+
+import { fetchMsgState, linkListState } from '@/recoil';
 
 const LinkItemCard = ({ link }: { link: LinkProps }) => {
   return (
